@@ -1,0 +1,88 @@
+Starting QAQC model training using existing CSV features
+Arguments: Namespace(csv_path='/root/QAQC/train.csv', output_dir='results_csv', sample_limit=50)
+Loading data from /root/QAQC/train.csv
+Loaded 151 records with 36 columns
+Dataset overview:
+Columns: ['dataset', 'subject', 'recording_id', 'recording_path', 'source_fs', 'resampled_fs', 'age', 'age_group', 'sex', 'bmi', 'height', 'weight', 'segment_id', 'segment_path', 'spectral_flatness', 'signal_clarity', 'spectral_entropy', 'bpm', 'murmur', 'murmur_location', 'systolic_murmur', 'diastolic_murmur', 'systolic_murmur_type', 'diastolic_murmur_type', 'condition', 'disease', 'severity', 'pregnancy_status', 'smoking_status', 'recording_path.1', 'envelope_variance', 'center_start_time', 'center_end_time', 'path', 'fold', 'qaqc']
+Data types:
+dataset                   object
+subject                   object
+recording_id              object
+recording_path            object
+source_fs                  int64
+resampled_fs               int64
+age                      float64
+age_group                 object
+sex                       object
+bmi                      float64
+height                   float64
+weight                   float64
+segment_id                object
+segment_path             float64
+spectral_flatness        float64
+signal_clarity           float64
+spectral_entropy         float64
+bpm                      float64
+murmur                      bool
+murmur_location          float64
+systolic_murmur             bool
+diastolic_murmur            bool
+systolic_murmur_type      object
+diastolic_murmur_type     object
+condition                 object
+disease                   object
+severity                 float64
+pregnancy_status         float64
+smoking_status           float64
+recording_path.1          object
+envelope_variance        float64
+center_start_time        float64
+center_end_time          float64
+path                      object
+fold                       int64
+qaqc                      object
+dtype: object
+QAQC label distribution:
+  ok: 47
+  good: 34
+  bad: 34
+  very good: 25
+  very bad: 11
+Found completely empty columns: ['segment_path', 'murmur_location', 'severity', 'pregnancy_status', 'smoking_status', 'center_start_time', 'center_end_time']
+Limited to 50 samples
+Total columns in dataset: 36
+Numeric columns found: 19
+Excluded columns: 19
+Identified 14 feature columns:
+  - source_fs: 50 values, 0 NaN, 0 inf, 0 zeros
+  - resampled_fs: 50 values, 0 NaN, 0 inf, 0 zeros
+  - age: 50 values, 50 NaN, 0 inf, 0 zeros
+  - bmi: 50 values, 10 NaN, 0 inf, 0 zeros
+  - height: 50 values, 10 NaN, 0 inf, 0 zeros
+  - weight: 50 values, 10 NaN, 0 inf, 0 zeros
+  - spectral_flatness: 50 values, 0 NaN, 0 inf, 0 zeros
+  - signal_clarity: 50 values, 0 NaN, 0 inf, 0 zeros
+  - spectral_entropy: 50 values, 0 NaN, 0 inf, 0 zeros
+  - bpm: 50 values, 0 NaN, 0 inf, 0 zeros
+  - severity: 50 values, 50 NaN, 0 inf, 0 zeros
+  - envelope_variance: 50 values, 50 NaN, 0 inf, 0 zeros
+  - center_start_time: 50 values, 50 NaN, 0 inf, 0 zeros
+  - center_end_time: 50 values, 50 NaN, 0 inf, 0 zeros
+Starting feature preprocessing...
+Filled 50 missing values in age with median: 0.0000
+Filled 10 missing values in bmi with median: 15.2879
+Capping 2 outliers in bmi to range [9.8529, 21.1426]
+Filled 10 missing values in height with median: 1.1300
+Filled 10 missing values in weight with median: 18.8500
+Capping 1 outliers in weight to range [-15.7500, 52.3250]
+Capping 9 outliers in spectral_entropy to range [9.2065, 12.8690]
+Filled 50 missing values in severity with median: 0.0000
+Filled 50 missing values in envelope_variance with median: 0.0000
+Filled 50 missing values in center_start_time with median: 0.0000
+Filled 50 missing values in center_end_time with median: 0.0000
+After preprocessing: 50 samples with 14 features
+Using 50 samples for training
+Training set: (40, 14), Test set: (10, 14)
+Best model: random_forest with accuracy: 0.3000
+Training completed successfully!
+Results saved to: results_csv

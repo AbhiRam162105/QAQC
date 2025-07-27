@@ -1,0 +1,45 @@
+Starting QAQC model training using existing CSV features
+Arguments: Namespace(csv_path='/root/QAQC/train.csv', output_dir='results', sample_limit=None)
+Loading data from /root/QAQC/train.csv
+Loaded 151 records
+QAQC label distribution:
+  ok: 47
+  good: 34
+  bad: 34
+  very good: 25
+  very bad: 11
+Identified 15 feature columns:
+  - source_fs
+  - resampled_fs
+  - age
+  - bmi
+  - height
+  - weight
+  - spectral_flatness
+  - signal_clarity
+  - spectral_entropy
+  - bpm
+  - severity
+  - envelope_variance
+  - center_start_time
+  - center_end_time
+  - fold
+Filled 0 missing values in source_fs with median: 2000.0000
+Filled 0 missing values in resampled_fs with median: 1450.0000
+Filled 0 missing values in age with median: 69.0000
+Filled 0 missing values in bmi with median: 17.0391
+Filled 0 missing values in height with median: 1.2800
+Filled 0 missing values in weight with median: 24.3000
+Filled 0 missing values in spectral_flatness with median: 0.0156
+Filled 0 missing values in signal_clarity with median: 0.6987
+Filled 0 missing values in spectral_entropy with median: 9.1067
+Filled 0 missing values in bpm with median: 114.3000
+Filled 151 missing values in severity with median: nan
+Filled 0 missing values in envelope_variance with median: -inf
+Filled 151 missing values in center_start_time with median: nan
+Filled 151 missing values in center_end_time with median: nan
+Filled 0 missing values in fold with median: 3.0000
+After preprocessing: 151 samples with 15 features
+Using 151 samples for training
+Training set: (120, 15), Test set: (31, 15)
+Training failed: Input X contains infinity or a value too large for dtype('float64').

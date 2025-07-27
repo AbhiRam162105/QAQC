@@ -1,0 +1,63 @@
+# QAQC Model Configuration
+
+# Model training parameters
+model_config:
+  random_state: 42
+  test_size: 0.2
+  cv_folds: 5
+  
+# Feature extraction parameters  
+feature_config:
+  target_duration: 6.0  # seconds
+  resample_fs: 1450     # Hz
+  bandpass_filter:
+    low: 20             # Hz
+    high: 720           # Hz
+    
+# Audio processing
+audio_config:
+  default_source_fs: 4000
+  segment_type: "center"  # center, full, random
+  
+# Model hyperparameters
+models:
+  random_forest:
+    n_estimators: 200
+    max_depth: 15
+    min_samples_split: 5
+    min_samples_leaf: 2
+    class_weight: "balanced"
+    
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    
+  svm:
+    kernel: "rbf"
+    C: 10
+    gamma: "scale"
+    class_weight: "balanced"
+    
+  logistic_regression:
+    C: 1.0
+    max_iter: 1000
+    class_weight: "balanced"
+    multi_class: "ovr"
+
+# Output configuration
+output:
+  save_models: true
+  save_features: true
+  create_plots: true
+  plot_dpi: 300
+  
+# Quality labels mapping
+qaqc_labels:
+  - "very bad"
+  - "bad" 
+  - "ok"
+  - "good"
+  - "very good"

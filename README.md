@@ -46,12 +46,12 @@ The project expects a CSV file with the following key columns:
 ```bash
 pip install -r requirements.txt
 ```
-
+python main_train.py --csv_path /root/QAQC/Lhai HQ Murmur and Normal Signals (Open-Source) - lhai_murmur_qaqc.csv --sample_limit 100
 ## Usage
 
 1. **Data Preprocessing**: 
    ```python
-   python src/data_preprocessing.py --csv_path your_data.csv
+   python src/data_preprocessing.py --csv_path /root/QAQC/Lhai HQ Murmur and Normal Signals (Open-Source) - lhai_murmur_qaqc.csv
    ```
 
 2. **Feature Extraction**:
